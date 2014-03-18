@@ -12,7 +12,7 @@
 </div>
 #foreach ($row in $rows)
     <div class="col-md-1">
-        <p class="text-success text-center">开奖号码</p>
+        <p class="text-success text-center">最后$showPageWinnerTable.size()期</p>
         <table class="table table-bordered">
             <tbody>
                 #foreach($winnerData in $showPageWinnerTable)
@@ -28,11 +28,11 @@
     <div class="col-md-11">
         #foreach( $column in $columns)
             #if($column==0)
-                #set($titleName= "头道 $row")
+                #set($titleName= "头道$row")
             #elseif($column==1) 
-                #set($titleName= "中道 $row")
+                #set($titleName= "中道$row")
             #else
-                #set($titleName= "尾道 $row")
+                #set($titleName= "尾道$row")
             #end
             #set($rowIndex = $row - 1)
             #set($showPageVO = $showPageDataTable.get($column).get($rowIndex))
@@ -72,8 +72,8 @@
                     </table>
                     <h4>
                         #set($startCycleNum=$showPageVO.getMaxForAllOfGroupHistoryPeriodsRow() + 1)
-                        <span class="label label-warning">从第 <em class="text-primary">$startCycleNum</em> 期
-                            开始,最长相邻期为 <em class="text-primary">$showPageVO.getMaxForAllOfGroupHistorySerialNum()</em>
+                        <span class="label label-warning">
+                        从第<em class="text-primary">$startCycleNum</em>期开始,最长相邻期为<em class="text-primary">$showPageVO.getMaxForAllOfGroupHistorySerialNum()</em>
                         </span>
                         <span class="label label-info pull-right">$!{titleName} 预测号码为
                             <em class="text-danger">$showPageVO.getRecommendFilterTwoNumber()</em>
