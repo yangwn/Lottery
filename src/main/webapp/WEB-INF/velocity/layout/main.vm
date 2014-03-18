@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>$!page_title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Core CSS - Include with every page -->
+        <link href="#springUrl('/resources/css/bootstrap/bootstrap.min.css')" rel="stylesheet" />
+        <link href="#springUrl('/resources/font-awesome/css/font-awesome.css')" rel="stylesheet" />
+
+        <link href="#springUrl('/resources/css/lottery.css')" rel="stylesheet" />
+        <!-- Core Scripts - Include with every page -->
+        <script src="#springUrl('/resources/js/jquery-2.1.0.js')"></script>
+        <script src="#springUrl('/resources/js/bootstrap/bootstrap.min.js')"></script>
+    </head>
+    <body>
+        <header>#parse('/layout/header.vm')</header>
+        <content>$!content</content>
+        <footer>#parse('/layout/footer.vm')</footer>
+    </body>
+</html>

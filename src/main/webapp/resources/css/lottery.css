@@ -1,0 +1,94 @@
+body {
+	margin-top: 50px;
+}
+
+footer {
+	margin: 1px 0;
+}
+
+.portfolio-item {
+	margin-bottom: 25px;
+}
+
+.table td,.table th {
+	text-align: center;
+}
+
+.table>thead>tr>th,.table>tbody>tr>th,.table>tfoot>tr>th,.table>thead>tr>td,.table>tbody>tr>td,.table>tfoot>tr>td
+	{
+	padding: 0px;
+}
+
+.startbootstrap-nav {
+	background-color: #B84D45;
+	border-color: #A5423B;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.startbootstrap-nav .navbar-brand {
+	color: #FFFFFF;
+}
+
+.startbootstrap-nav .navbar-nav>li>a,.masthead a {
+	color: #FBDEDB;
+}
+
+.startbootstrap-nav .navbar-nav>li>a:hover,.startbootstrap-nav .navbar-nav>li>a:focus
+	{
+	background-color: #A5423B;
+	color: #FFFFFF;
+}
+
+.startbootstrap-nav .navbar-nav>.active>a,.startbootstrap-nav .navbar-nav>.active>a:hover
+	{
+	background-color: #A5423B;
+	color: #FFFFFF;
+}
+
+.startbootstrap-nav .nav .open>a,.nav .open>a:hover,.startbootstrap-nav .nav .open>a:focus
+	{
+	background-color: #A5423B;
+	color: #FFFFFF;
+}
+
+.startbootstrap-nav .navbar-toggle {
+	border-color: #B84D45;
+}
+
+.startbootstrap-nav .navbar-toggle:hover {
+	background-color: #B84D45;
+	border-color: #B84D45;
+}
+
+.startbootstrap-nav .navbar-collapse {
+	border: medium none;
+}
+
+.startbootstrap-nav .navbar-toggle .icon-bar {
+	background-color: #FFFFFF;
+}
+
+.startbootstrap-nav .nav .caret {
+	border-bottom-color: #FBDEDB;
+	border-top-color: #FBDEDB;
+}
+
+.startbootstrap-nav .nav .open>a,.nav .open>a:hover .caret,.startbootstrap-nav .nav .open>a:focus .caret,.startbootstrap-nav .nav .active .caret,.startbootstrap-nav .nav a:hover .caret,.startbootstrap-nav .nav a:focus .caret
+	{
+	border-bottom-color: #FFFFFF;
+	border-top-color: #FFFFFF;
+}
+
+.startbootstrap-nav .dropdown-menu>li>a:hover,.startbootstrap-nav .dropdown-menu>li>a:focus,.startbootstrap-nav .dropdown-menu>.active>a,.startbootstrap-nav .dropdown-menu>.active>a:hover,.startbootstrap-nav .dropdown-menu>.active>a:focus
+	{
+	background-color: #A5423B;
+	color: #FFFFFF;
+}
+
+.d{
+	background-color: #B84D45;
+}
+
+.w{
+	background-color: #5E9CD1;
+}

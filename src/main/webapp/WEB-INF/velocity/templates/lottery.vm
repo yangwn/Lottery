@@ -1,0 +1,87 @@
+#set($columns=[0 .. $groupIndexLength ]) <!--[0..2]-->
+#set($rows=[ 1 .. $factorIndexLength])  <!--[1..9]-->
+#define($content)
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            <small>当前计算的是第 <em>$!{latestCycleNum}</em>
+                期, 上期中奖号码为 <em>$!{latestWinnerCode}</em>
+            </small>
+        </h1>
+    </div>
+</div>
+#foreach ($row in $rows)
+    <div class="col-md-1">
+        <p class="text-success text-center">开奖号码</p>
+        <table class="table table-bordered">
+            <tbody>
+                #foreach($winnerData in $showPageWinnerTable)
+                    <tr>
+                        #foreach($winnerCode in $winnerData)
+                            <td>$winnerCode</td>
+                        #end
+                    </tr>
+                #end
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-11">
+        #foreach( $column in $columns)
+            #if($column==0)
+                #set($titleName= "头道 $row")
+            #elseif($column==1) 
+                #set($titleName= "中道 $row")
+            #else
+                #set($titleName= "尾道 $row")
+            #end
+            #set($rowIndex = $row - 1)
+            #set($showPageVO = $showPageDataTable.get($column).get($rowIndex))
+            <div class="col-md-4">
+                <div class="contain">
+                    <p class="text-primary text-center">$!titleName</p>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>G0</th>
+                                <th>G1</th>
+                                <th>G2</th>
+                                <th>G3</th>
+                                <th>G4</th>
+                                <th>G5</th>
+                                <th>G6</th>
+                                <th>G7</th>
+                                <th>G8</th>
+                                <th>G9</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            #foreach($showPageRowMatriaxData in $showPageVO.getShowPageRowMatriaxTableData())
+                                #set($rowNumInTable=$velocityCount)
+                                <tr>
+                                    #foreach($showPageRowMatriax in $showPageRowMatriaxData)
+                                        <td class="$showColor.getColor($showPageWinnerTable,$rowNumInTable,$column,$showPageRowMatriax)">$showPageRowMatriax</td>
+                                    #end
+                                </tr>
+                            #end
+                            <tr class="success">
+                                #foreach($maxForEachColumnData in $showPageVO.getMaxForEachColumnHistorySerialNumArray())
+                                    <td>$maxForEachColumnData</td>
+                                #end
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>
+                        #set($startCycleNum=$showPageVO.getMaxForAllOfGroupHistoryPeriodsRow() + 1)
+                        <span class="label label-warning">从第 <em class="text-primary">$startCycleNum</em> 期
+                            开始,最长相邻期为 <em class="text-primary">$showPageVO.getMaxForAllOfGroupHistorySerialNum()</em>
+                        </span>
+                        <span class="label label-info pull-right">$!{titleName} 预测号码为
+                            <em class="text-danger">$showPageVO.getRecommendFilterTwoNumber()</em>
+                        </span>
+                    </h4>
+                </div>
+            </div>
+        #end
+    </div>
+#end
+#end
